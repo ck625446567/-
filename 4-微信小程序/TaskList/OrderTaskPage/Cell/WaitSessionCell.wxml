@@ -1,0 +1,46 @@
+<!--pages/HomeModule/WaitSession/Cell/WaitSessionCell.wxml-->
+
+<!-- body -->
+<view class='body' bindtap='onClickCell'>
+ <!-- header -->
+  <headcell name="{{data.storeName}}" desc="{{ data.orderStatusCn }}" color="{{data.orderStatusColor}}"></headcell>
+
+  <view wx:for="{{data.orderModels}}" wx:key="{{item.brand}}">
+    <!-- sep -->
+    <view class='sep'></view>
+    <!-- 品牌 -->
+    <view class='itemBody itemFirstBody'>
+      <text class='itemTitle'>品牌:</text>
+      <text class='itemValue'>{{ item.brand || '' }}</text>
+    </view>
+    <!-- 型号 -->
+    <view class='itemBody'>
+      <text class='itemTitle'>型号:</text>
+      <text class='itemValue'>{{ item.smModel || '' }}</text>
+    </view>
+    <!-- 数量 -->
+    <view class='itemBody'>
+      <text class='itemTitle'>数量:</text>
+      <text class='itemValue itemLastBody'>{{ item.modelNum || '' }}</text>
+    </view>
+
+    <!-- sep -->
+    <view class='marginSep'></view>
+  </view>
+
+  <!-- 订单编号 -->
+  <view class='itemBody itemFirstBody'>
+    <text class='itemTitle'>订单编号:</text>
+    <text class='itemValue'>{{ data.orderNo || '' }}</text>
+  </view>
+  <!-- 下单时间 -->
+  <view class='itemBody'>
+    <text class='itemTitle'>下单时间:</text>
+    <text class='itemValue'>{{ data.orderTimeDesc }}</text>
+  </view>
+  <!-- 待付款 -->
+  <view class='itemBody'>
+    <text class='itemTitle'>剩余应付金额:</text>
+    <text class='itemValue itemLastBody' style='margin-left: 20rpx;'>{{ data.surplusAmount || '' }}</text>
+  </view>
+</view>

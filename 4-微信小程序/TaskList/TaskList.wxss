@@ -1,0 +1,9 @@
+/* pages/WaitTaskModule/WaitTaskList.wxss */
+
+page {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  background-color: #f6f6f6;
+}

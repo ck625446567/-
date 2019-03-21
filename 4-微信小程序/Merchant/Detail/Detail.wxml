@@ -1,0 +1,77 @@
+<!--pages/WaitTaskModule/Merchant/Detail/Detail.wxml-->
+
+<block wx:if="{{ ready }}">
+
+<!-- 意向商户信息 -->
+<view class='merchantContainer'>
+    <view class='baseInfo'>
+      <view class='left'>
+        <view class='typeName'>
+          <text style='background: {{merchantInfo.typeColor}}'>{{ merchantInfo.typeName }}</text>
+        </view> 
+        <view bindtap='onCallPhone'>
+          <text class='contact'>{{merchantInfo.contact || ''}}</text>
+          <text class='telephone'>{{merchantInfo.telephone || ''}}</text>
+          <image class='phone' src='../../../../Source/Common/phone.png'></image>
+        </view>
+        <view class='address'>
+          <text>{{merchantInfo.addressCn || '' }}</text>
+        </view>
+        <view class='storeNo'>
+          <text>门店编号：</text>
+          <text>{{merchantInfo.storeNo || ''}}</text>
+        </view>
+      </view>
+      <view class='right' wx:if="{{showMatchFlag}}" bindtap='onStoreMatch'>
+        <view class='toSelectStore'>门店匹配</view>
+      </view>
+    </view>
+</view>
+
+
+<pagebar bindselected="barChange" items="{{ bars }}" selectedId="{{ barIndex }}"></pagebar>
+
+<swiper current="{{ barIndex }}" bindchange='swiperChange' style='flex: 1;'>
+  <swiper-item>
+    <scroll-view scroll-y="{{ true }}" style='height: 100%;'>
+      <titlecell type='{{merchantInfo.operateType === "EDIT" ? "edit" : "none"}}' titleColor='black' height='60rpx' title='意向信息' sideSep='1' sep='0' titleMarginLeft="10rpx" value="" bindclickcell='onClickEditIntention'></titlecell>
+      <titlecell height='60rpx' title='门店名称：' sep='0' value="{{ merchantInfo.storeName || '' }}"></titlecell>
+      <titlecell height='60rpx' title='门店地址：' sep='0' value="{{ merchantInfo.addressCn || '' }}"></titlecell>
+      <titlecell height='60rpx' title='门店联系人：' sep='0' value="{{ merchantInfo.contact || '' }}"></titlecell>
+      <titlecell height='60rpx' title='联系手机号：' sep='0' value="{{ merchantInfo.telephone || '' }}"></titlecell>
+      <titlecell height='60rpx' title='法/经营人：' sep='0' value="{{ merchantInfo.storePerson || '' }}"></titlecell>
+      <view class='sep'></view>
+      <titlecell height='60rpx' title='经营行业：' sep='0' value="{{ merchantInfo.productType || '' }}"></titlecell>
+      <titlecell height='60rpx' title='现经营品牌：' sep='0' value="{{ merchantInfo.brand || '' }}"></titlecell>
+      <titlecell height='60rpx' title='是否一网：' sep='0' value="{{ merchantInfo.fristRank ? '是' : '否' }}"></titlecell>
+      <titlecell height='60rpx' title='二网数量：' sep='0' value="{{ merchantInfo.subordinateNumCn || 0 }}"></titlecell>
+      <titlecell height='60rpx' title='是否有店：' sep='0' value="{{ merchantInfo.hasStore ? '是' : '否' }}"></titlecell>
+      <titlecell height='60rpx' title='经营年限：' sep='0' value="{{ merchantInfo.manageYearCn || '' }}"></titlecell>
+      <titlecell height='60rpx' title='预计投资(万元)：' sep='0' value="{{ merchantInfo.expectedInvestmentScaleCn || '' }}"></titlecell>
+      <titlecell height='60rpx' title='预计零售(台/月)：' sep='0' value="{{ merchantInfo.projectedRetail || '' }}"></titlecell>
+      <view class='sep'></view>
+      <titlecell height='60rpx' title='申请日期：' sep='0' value="{{ merchantInfo.createTime }}"></titlecell>
+      <titlecell height='60rpx' title='商户类型：' sep='0' value="{{ merchantInfo.typeName || '' }}"></titlecell>
+      <titlecell height='60rpx' title='意向分级：' sep='0' value="{{ merchantInfo.intentionRankName || '' }}"></titlecell>
+      <titlecell height='60rpx' title='线索来源：' sep='0' value="{{ merchantInfo.clueSource }}"></titlecell>
+      <view class='pictureContainer'>
+        <picturecell driveMode='2' title='门头照' src="{{ merchantInfo.doorPicUrl }}"></picturecell>
+        <picturecell driveMode='2' title='营业执照' src="{{ merchantInfo.licensePicUrl }}"></picturecell>
+      </view>
+    </scroll-view>
+    
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y="{{ true }}" style='height: 100%;'>
+      <view class='newVisitBody' bindtap='onAddVisit'>
+        <image class='newVisitImage' src='./Source/add.png'></image>
+        <text class='newVisitText'>新增拜访记录</text>
+      </view>
+      <visitlistcell wx:for="{{ visitList }}" wx:key="{{ item.id }}" intendedMerchantId="{{intendedMerchantId}}" data="{{ item }}"></visitlistcell>
+      <view class='sep' style='margin: 0;'></view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+
+
+</block>

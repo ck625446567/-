@@ -1,0 +1,20 @@
+<!--pages/HomeModule/WaitSession/WaitSession.wxml-->
+<!-- 代办任务 -->
+
+<view class='body'>
+  <search-bar bindsearch='onSearch' placeholder='输入订单编号/门店名称/收货人'></search-bar>
+  <scroll-view scroll-y="{{ true }}" class='scrollView' bindscrolltoupper='onRefresh' bindscrolltolower='onLoadMore'>
+    <view style='margin-top: 10px;'>
+        <waitsessioncell
+      bindselected='onclickcell'
+      wx:if="{{ !empty }}" 
+      wx:for="{{ list }}"
+      wx:key="{{ item.orderNo }}"
+      data="{{ item }}"
+      data-item="{{item}}"></waitsessioncell>
+    </view>
+  
+    <text class='emptyText' wx:if="{{empty}}">未搜索到相关结果</text>
+  </scroll-view>
+</view>
+

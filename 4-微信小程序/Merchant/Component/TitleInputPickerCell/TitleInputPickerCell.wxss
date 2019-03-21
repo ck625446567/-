@@ -1,0 +1,56 @@
+/* Components/Apply/TitlePickerCell/TitlePickerCell.wxss */
+
+.body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 88rpx;
+  background-color: white;
+}
+
+.title {
+  font-size:28rpx;
+  color:#4a4a4a;
+  letter-spacing:0;
+}
+
+.rightBody {
+  display: inline-flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: stretch;
+  margin-left: 20rpx;
+}
+
+.value {
+  color: black;
+  font-size:28rpx;
+  flex: 1;
+}
+
+.rightSep {
+  background-color: #eee;
+  height: 2rpx;
+}
+
+.rightTopBody {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+}
+
+.rightTopImage {
+  width: 12rpx;
+  height: 22rpx;
+}
+
+.input {
+  color: black;
+  font-size:28rpx;
+  flex: 1;
+}
+.cell_ft {
+  width: 80rpx;
+  text-align: right;
+}

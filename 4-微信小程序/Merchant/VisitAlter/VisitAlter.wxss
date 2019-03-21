@@ -1,0 +1,12 @@
+/* pages/WaitTaskModule/Merchant/VisitAlter/VisitAlter.wxss */
+
+/* 横向布局多个按钮。且底部有阴影 */
+.rowButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  border-top-style: solid;
+  border-top-width: 1rpx;
+  border-top-color: #f6f6f6;
+  height: 114rpx;
+}

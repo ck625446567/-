@@ -1,0 +1,15 @@
+<!-- pages/WaitTaskModule/WaitTaskList.wxml -->
+
+<pagebar bindselected="barChange" items="{{ bars }}" selectedId="{{ barIndex }}"></pagebar>
+
+<swiper current="{{ barIndex }}" bindchange='swiperChange' style='flex: 1;'>
+  <swiper-item>
+    <IntendedTaskPage type='{{ type }}' dealerType= '{{ dealerType }}'></IntendedTaskPage>
+  </swiper-item>
+  <swiper-item>
+    <CreateTaskPage type='{{ type }}'></CreateTaskPage>
+  </swiper-item>
+  <swiper-item>
+    <OrderTaskPage type='{{ type }}'></OrderTaskPage>
+  </swiper-item>
+</swiper>

@@ -1,0 +1,22 @@
+/* pages/WaitTaskModule/MyMerchantList/MyMerchantList.wxss */
+
+page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: #f6f6f6;
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  font-size: 0;
+}
+
+.shadowTop {
+  border-top-style: solid;
+  border-top-width: 1rpx;
+  border-top-color: #f6f6f6;
+}

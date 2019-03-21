@@ -1,0 +1,114 @@
+/* pages/WaitTaskModule/WaitTaskList/WaitTaskPage/WaitTaskPage.wxss */
+
+.body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.scrollView {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+  background-color: #f6f6f6;
+}
+
+/* 条目 */
+.cellBody {
+  background-color: white;
+  overflow: hidden;
+  box-shadow:0 2px 4px 0 #e5e5e5;
+  margin-bottom: 10rpx;
+  font-size: 0;
+}
+
+/* 商户类型 */
+.merchantTypeBody {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #50e3c2;
+  border-bottom-right-radius: 16rpx;
+  height: 32rpx;
+}
+
+.merchantTypeText {
+  color: white;
+  font-size: 20rpx;
+  margin: 4rpx 6rpx;
+}
+
+/* 条目 门店 body */
+.cellStoreBody {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 70rpx;
+}
+
+.cellStoreSide {
+  width: 6rpx;
+  background-color: #ffe600;
+  height: 44rpx;
+}
+
+.cellStoreValue {
+  color: black;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+
+.cellStoreImage {
+  width: 80rpx;
+  height: 40rpx;
+}
+
+/* boss */
+
+.bossBody {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 70rpx;
+}
+
+.bossTitle {
+  color: #9b9b9b;
+  font-size: 28rpx;
+  width: 128rpx;
+  margin-left: 40rpx;
+}
+
+.bossValue {
+  color: black;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+
+.bossPhoneImage {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* 时间 */
+.timeBody {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60rpx;
+  background-color: #f9f9f9;
+}
+
+.timeTitle {
+  color: #4a4a4a;
+  font-size: 24rpx;
+  margin-left: 40rpx;
+}
+.emptyText {
+  display: block;
+  text-align: center;
+  color: #4a4a4a;
+  font-size: 32rpx;
+  margin-top: 120rpx;
+}

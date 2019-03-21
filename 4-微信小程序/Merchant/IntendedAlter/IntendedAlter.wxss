@@ -1,0 +1,38 @@
+/* pages/WaitTaskModule/Merchant/IntendedAlter/IntendedAlter.wxss */
+
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.scrollView {
+  display: flex;
+  flex: 1;
+}
+
+.pictureContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 40rpx;
+  background-color: white;
+}
+
+/* 横向布局多个按钮。且底部有阴影 */
+.rowButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  border-top-style: solid;
+  border-top-width: 1rpx;
+  border-top-color: #f6f6f6;
+  height: 114rpx;
+}

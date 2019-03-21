@@ -1,0 +1,29 @@
+<!--pages/WaitTaskModule/Merchant/Detail/VisitListCell/VisitListCell.wxml-->
+
+<view>
+  <!-- 拜访内容 -->
+  <view class='contentBody' catchtap='showDetail'>
+    <!-- 拜访记录数字 -->
+    <view class='contentIndexBody'>
+      <text class='contentIndexText'>{{ data.index + '' }}</text>
+    </view>
+    <!-- 拜访名称 -->
+    <text class='contentPerson'>{{ data.contact || '' }}</text>
+    <!-- 拜访时间 -->
+    <text class='contentTime'>{{ data.createTime || '' }}</text>
+    <!-- 箭头 -->
+    <image class="{{ explan ? 'contentRotateImage' : 'contentImage' }}" src='../../../../../Source/Common/arrowright.png'></image>
+  </view>
+  <view class='sep'></view>
+  <!-- 拜访详情 -->
+  <view class='infoBody' wx:if="{{ explan }}">
+    <titlecell bindclickcell='onEdit' sep='0' type='edit' title='拜访日期：' value="{{ data.createTime || '' }}"></titlecell>
+    <titlecell sep='0' title='拜访人：' value="{{ data.name }}"></titlecell>
+    <titlecell sep='0' title='门店联系人：' value="{{ data.contact }}"></titlecell>
+    <titlecell sep='0' title='联系人职位：' value="{{ data.position }}"></titlecell>
+    <titlecell sep='0' title='联系方式：' value="{{ data.telephone }}"></titlecell>
+    <titlecell sep='0' title='签到地址：' value="{{ data.location }}"></titlecell>
+    <titlecell sep='0' title='拜访内容：' value="{{ data.content }}"></titlecell>
+    <view class='sep'></view>
+  </view>
+</view>

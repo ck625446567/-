@@ -1,0 +1,44 @@
+<!--pages/WaitTaskModule/Merchant/IntendedAlter/IntendedAlter.wxml-->
+
+<scroll-view scroll-y="{{ true }}" class='scrollView'>
+  <titlecell title='意向信息' titleMarginLeft='10rpx' sideSep='1' titleColor='black' sep='0'></titlecell>
+  <titleinputcell title='门店名称：' bindinput='onInput' data-key='storeName' value="{{ storeName }}"></titleinputcell>
+  <titlecell 
+  value="{{ (provinceName || '') + (cityName || '') + (areaName || '') }}"
+  title='门店地址：' 
+  titleColor='#4a4a4a' 
+  placeholder='请选择' 
+  type='arrowright' 
+  bindclickcell='beginChooseAddress'></titlecell>
+  <titleinputcell title='详细地址：' bindinput='onInput' data-key='address' value="{{ address }}"></titleinputcell>
+  <titleinputcell title='联系人：' bindinput='onInput' data-key='contact' value="{{ contact }}"></titleinputcell>
+  <titleinputcell title='联系人手机号：' bindinput='onInput' data-key='telephone' value="{{ telephone }}"></titleinputcell>
+  <titlepickercell title='经营类型：' pickItems="{{ inmManagerType }}" value="{{ storeManageType }}" bindselected='onPicked' data-key='storeManageType'></titlepickercell>
+  <titleinputcell title='姓名：' bindinput='onInput' data-key='storePerson' value="{{ storePerson }}"></titleinputcell>
+  <!-- <titleinputcell title='经营行业' bindinput='onInput' data-key='productType' value="{{ productType }}"></titleinputcell> -->
+  <titlepickercell title='经营行业' pickItems="{{ inmIndusty }}" value="{{ industry }}" bindselected='onPicked' data-key='industry'></titlepickercell>
+  <titleinputcell title='现经营品牌：' bindinput='onInput' data-key='brand' value="{{ brand }}"></titleinputcell>
+  <segmentcontrolcell items="{{ firstLevel }}" value="{{ fristRank + '' }}" title='是否一网：' bindselected='onSegmentControlSelected' data-key='fristRank'></segmentcontrolcell>
+  <segmentcontrolcell items="{{ secondLevel }}" value="{{ hasStore + '' }}" title='是否有店：' bindselected='onSegmentControlSelected' data-key='hasStore'></segmentcontrolcell>
+  <titledefpickercell title='二网数量：' pickItems="{{ inmTwoNetwork }}" value="{{ subordinateNum || subordinateNumCn }}" bindselected='onPicked' data-key='subordinateNum'></titledefpickercell>
+  <titledefpickercell title='经营年限：' pickItems="{{ inmBusinessLife }}" value="{{ manageYear || manageYearCn }}" bindselected='onPicked' data-key='manageYear'></titledefpickercell>
+  <titledefpickercell title='预计投资(万元):' pickItems="{{ inmInvestment }}" value="{{ expectedInvestmentScale || expectedInvestmentScaleCn}}" bindselected='onPicked' data-key='expectedInvestmentScale'></titledefpickercell>
+  <titleinputcell title='预计零售(台/月):' inputType='number' bindinput='onInput' data-key='projectedRetail' value="{{ projectedRetail }}"></titleinputcell>
+  <titlepickercell title='商户类型：' pickItems="{{ inmDealerType }}" value="{{ type }}" bindselected='onPicked' data-key='type'></titlepickercell>
+  <titlepickercell wx:if='{{type=== "INTENDED_TYPE"}}' title='意向分级：' pickItems="{{ inmRank }}" value="{{ intentionRank }}" bindselected='onPicked' data-key='intentionRank'></titlepickercell>
+  <view class='pictureContainer'>
+    <picturecell bindupdate='onUpdatePicture' src="{{ storeHeaderPicture.src }}" local="{{ storeHeaderPicture.local }}" type='{{ storeHeaderPicture.type }}' title='{{ storeHeaderPicture.title }}'></picturecell>
+    <picturecell bindupdate='onUpdatePicture' src="{{ businessLicensePicture.src }}" local="{{ businessLicensePicture.local }}"  type='{{ businessLicensePicture.type }}' title='{{ businessLicensePicture.title }}'></picturecell>
+  </view>
+</scroll-view>
+
+<view class='rowButtons'>
+  <view class='whiteButton flex1' bindtap='onCancel'>
+    <text>取 消</text>
+  </view>
+  <view class='yellowGradientButton flex1' bindtap='onEnsure'>
+    <text>保 存</text>
+  </view>
+</view>
+
+<address-picker bindchoose='onChooseAddress' bindcancel='onCancelChooseAddress' show="{{ addressPickShow }}"></address-picker>

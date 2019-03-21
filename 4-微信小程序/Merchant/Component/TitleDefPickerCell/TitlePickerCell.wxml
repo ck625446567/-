@@ -1,0 +1,30 @@
+<!--Components/Apply/TitlePickerCell/TitlePickerCell.wxml-->
+
+<wxs src="./tool.wxs" module="tools" />
+
+<!-- 最外城包裹 -->
+<!-- 包裹采用左右布局，标题为左，其余为右 -->
+<picker
+mode='selector'
+value="{{ tools.getPickedIndex(driveMode, value, pickItems, keyName) }}"
+bindchange='onPickChange'
+range="{{ pickItems }}" 
+range-key='{{ valueName }}'>
+  <view class='body'>
+    <!-- 标题 -->
+    <text class='title' style="margin-left: {{ titleMarginLeft }};min-width: {{ titleWidth }}">{{ title }}</text>
+    <!-- 除了标题其余部分 -->
+    <view class='rightBody' style="margin-right: {{ marginRight }}">
+      <!-- 其余部分采用上下布局。上为文本框和箭头，下为横线 -->
+      <view class='rightTopBody'>
+        <!-- 文本 -->
+        <text class='value' style="color: {{ value ? 'black' : 'gray' }};">{{ tools.getShowName(driveMode, value, pickItems, placeholder, keyName, valueName) }}</text>
+        <!-- 箭头 -->
+        <image src='../Source/arrowright.png' class='rightTopImage'></image>
+      </view>
+      <!-- 横线 -->
+      <view class='rightSep'></view>
+    </view>
+  </view>
+</picker>
+

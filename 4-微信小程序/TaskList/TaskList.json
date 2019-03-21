@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": " ",
+  "usingComponents": {
+    "IntendedTaskPage": "./IntendedTaskPage/IntendedTaskPage",
+    "OrderTaskPage": "./OrderTaskPage/OrderTaskPage",
+    "CreateTaskPage": "./CreateTaskPage/CreateTaskPage"
+  },
+  "disableScroll": true
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "IntendedTaskPage": "../TaskList/IntendedTaskPage/IntendedTaskPage"
+  },
+  "disableScroll": true,
+  "navigationBarTitleText": "招商管理"
+}

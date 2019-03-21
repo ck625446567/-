@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "waitsessioncell": "./Cell/WaitSessionCell"
+  },
+  "component": true
+}

@@ -1,0 +1,73 @@
+/* pages/HomeModule/WaitSession/Cell/WaitSessionCell.wxss */
+
+.header {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  height: 76rpx;
+  background-color: white;
+}
+
+.headerSide {
+  width: 6rpx;
+  height: 44rpx;
+  background-color: #ffe600;
+  display: inline-block;
+}
+
+.headerTitle {
+  margin-left: 42rpx;
+  color: black;
+  font-size: 28rpx;
+  flex: 1;
+}
+
+.headerStatus {
+  font-size: 28rpx;
+  color: #d4493b;
+  margin-right: 68rpx;
+}
+
+.sep {
+  height: 2rpx;
+  background-color: #eee;
+}
+
+.marginSep {
+  height: 2rpx;
+  background-color: #eee;
+  margin: 0 32rpx 0 32rpx;
+}
+
+.itemBody {
+  background-color: white;
+}
+
+.itemFirstBody {
+  padding-top: 10rpx;
+}
+
+.itemLastBody {
+  padding-bottom: 10rpx;
+}
+
+.itemTitle {
+  line-height: 50rpx;
+  display: inline-block;
+  min-width: 160rpx;
+  margin-left: 42rpx;
+  color: #9b9b9b;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+.itemValue {
+  line-height: 50rpx;
+  display: inline-block;
+  color: black;
+  font-size: 28rpx;
+}
+
+.body {
+  margin-bottom: 10rpx;
+}

@@ -1,0 +1,14 @@
+<!--pages/WaitTaskModule/Merchant/VisitAlter/VisitAlter.wxml-->
+<titleinputpickercell title='门店联系人：' value="{{ submitModel.contact || '' }}" data-key='contact' bindinput='onInput' pickItems="{{ contactList }}" valueName='contact' bindselected='onPickedContact'></titleinputpickercell>
+<titleinputcell title='联系人职位：' value="{{ submitModel.position || '' }}" data-key='position' bindinput='onInput'></titleinputcell>
+<titleinputcell title='联系方式：' value="{{ submitModel.telephone || '' }}" data-key='telephone' bindinput='onInput'></titleinputcell>
+<titleinputcell title='拜访内容：' value="{{ submitModel.content || '' }}" data-key='content' bindinput='onInput'></titleinputcell>
+
+<view class='rowButtons fixedBottom'>
+  <view class='whiteButton flex1' bindtap='onCancel'>
+    <text>取 消</text>
+  </view>
+  <view class='yellowGradientButton flex1' bindtap='onEnsure'>
+    <text>保 存</text>
+  </view>
+</view>

@@ -1,0 +1,58 @@
+/* pages/WaitTaskModule/Merchant/Detail/VisitListCell/VisitListCell.wxss */
+
+.sep {
+  background-color: #f6f6f6;
+  height: 2rpx;
+  margin: 0 40rpx;
+}
+
+.contentBody {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 112rpx;
+}
+
+.contentIndexBody {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c8c8c8;
+  align-self: stretch;
+  min-width: 40rpx;
+}
+
+.contentIndexText {
+  color: #9b9b9b;
+  font-size: 28rpx;
+}
+
+.contentPerson {
+  color: black;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+
+.contentTime {
+  color: #4a4a4a;
+  font-size: 28rpx;
+  margin-left: 54rpx;
+  flex: 1;
+}
+
+.contentImage {
+  width: 12rpx;
+  height: 22rpx;
+  margin-right: 70rpx;
+}
+
+.contentRotateImage {
+  width: 12rpx;
+  height: 22rpx;
+  margin-right: 70rpx;
+  transform:rotate(90deg);
+  -ms-transform:rotate(90deg); 	/* IE 9 */
+  -moz-transform:rotate(90deg); 	/* Firefox */
+  -webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+  -o-transform:rotate(90deg); 	/* Opera */
+}

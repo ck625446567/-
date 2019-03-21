@@ -1,0 +1,28 @@
+<!--pages/WaitTaskModule/Merchant/StoreMatch/StoreMatch.wxml-->
+  <search-bar bindsearch='onSearch' placeholder='输入营业执照号/老板名精准搜索'></search-bar>
+  <scroll-view scroll-y="{{ true }}" class='scrollView' bindscrolltoupper='onRefresh' bindscrolltolower='onLoadMore'>
+    <view class='contentTitle'>
+      <view class='tip'>
+        <view class='lineLeft'></view>
+        <view class='tipText'>相似已开户门店列表</view>
+      </view>
+    </view>
+    <view class='cellBody' wx:if="{{ !empty }}" wx:for="{{ list }}" wx:key="unique" catchtap='onClickCell' data-item="{{ item }}" data-index = '{{index}}'>
+      <view class='left'>
+        <view class='contact'>{{item.personName}} {{item.telephone}}</view>
+        <view class='storeName'>{{item.storeName}} </view>
+      </view>
+      <view class='right'>
+        <image wx:if='{{!!item.selected}}' src='../../../../Source/Common/icon_selected.png'></image>
+        <image wx:if='{{!item.selected}}' src='../../../../Source/Common/icon_unselected.png'></image>
+      </view>
+    </view>
+
+    <text class='emptyText' wx:if="{{ empty }}">未搜索到相关结果</text>
+  </scroll-view>
+
+  <view class='rowButtons'>
+    <view class='yellowGradientButton' style='flex:3;' bindtap='onEnsure'>
+      <text>确 认</text>
+    </view>
+  </view>

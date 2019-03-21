@@ -1,0 +1,22 @@
+<!--pages/WaitTaskModule/WaitTaskList/WaitTaskPage/WaitTaskPage.wxml-->
+
+<view class='body'>
+  <search-bar bindsearch='onSearch' placeholder='输入关键字模糊搜索'></search-bar>
+  <scroll-view scroll-y="{{ true }}" class='scrollView' bindscrolltoupper='onRefresh' bindscrolltolower='onLoadMore'>
+    <view style='margin-top:10px;'>
+      <view class='cellBody' wx:for="{{ list }}" wx:key="{{ item.typeTransferTime }}" catchtap='onClickCell' data-item="{{ item }}">
+      <headcell name="{{item.storeName}}" desc="{{ item.statusCn }}"></headcell>
+      <titlecell titleWidth='128rpx' height='60rpx' title='门店编号：' sep='0' value="{{ item.storeNo || '' }}"></titlecell>
+      <titlecell disableTap='1' bindclickcell='onCallPhone' titleWidth='128rpx' height='60rpx' type="phone" sep='0' imageSideValue='1' title="联系人：" value="{{ item.contact || '' }}" data-item="{{ item }}"></titlecell>
+      <titlecell titleWidth='128rpx' height='60rpx' title="业务经理：" sep='0' value="{{ item.initialAuditorName || '' }}"></titlecell>
+      <titlecell titleWidth='128rpx' height='60rpx' title='门店地址：' sep='0' value="{{ item.address || '' }}"></titlecell>
+      <view class='timeBody'>
+        <text class='timeTitle'>{{ '申请时间：' + item.applyTime }}</text>
+      </view>
+    </view>
+    </view>
+
+    <text class='emptyText' wx:if="{{empty}}">未搜索到相关结果</text>
+  </scroll-view>
+</view>
+

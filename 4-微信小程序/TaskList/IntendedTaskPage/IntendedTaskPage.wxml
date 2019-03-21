@@ -1,0 +1,23 @@
+<!--pages/WaitTaskModule/WaitTaskList/WaitTaskPage/WaitTaskPage.wxml-->
+
+<view class='body'>
+  <search-bar bindsearch='onSearch' placeholder='输入关键字模糊搜索'></search-bar>
+  <scroll-view scroll-y="{{ true }}" class='scrollView' bindscrolltoupper='onRefresh' bindscrolltolower='onLoadMore'>
+  <view style='margin-top:10px;'>
+      <view class='cellBody' wx:if="{{!empty}}" wx:for="{{ list }}" wx:key="{{ item.typeTransferTime }}" catchtap='onClickCell' data-item="{{ item }}">
+      <view class='merchantTypeDesc' style='background: {{item.merchantTypeColor}}'>{{item.merchantTypeDesc}}</view>
+      <headcell name="{{item.storeName}}" desc="{{ item.matchFlagDesc }}"></headcell>
+      <titlecell disableTap='1' bindclickcell='onCallPhone' titleWidth='128rpx' height='60rpx' type="phone" sep='0' imageSideValue='1' title="联系人：" value="{{ item.contact || '' }}" data-item="{{ item }}"></titlecell>
+      <titlecell titleWidth='128rpx' height='60rpx' title="业务经理：" sep='0' value="{{ item.serviceManager || '' }}"></titlecell>
+      <titlecell titleWidth='128rpx' height='60rpx' title='门店地址：' sep='0' value="{{ item.address || '' }}"></titlecell>
+      <view class='timeBody'>
+        <text class='timeTitle'>{{ '最近拜访时间：' + item.recentlyTime }}</text>
+        <text class='countTitle'>{{ '当月拜访次数：' + (item.visitNum || '0') }}次</text>
+      </view>
+    </view>
+  </view>
+    
+    <text class='emptyText' wx:if="{{empty}}">未搜索到相关结果</text>
+  </scroll-view>
+</view>
+

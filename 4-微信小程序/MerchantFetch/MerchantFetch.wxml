@@ -1,0 +1,34 @@
+<!--pages/WaitTaskModule/MerchantFetch/MerchantFetch.wxml-->
+
+ <titlecell 
+  value="{{ (provinceName || '') + (cityName || '') + (areaName || '') }}"
+  title='门店地址：' 
+  titleColor='#4a4a4a' 
+  placeholder='请选择' 
+  type='arrowright' 
+  bindclickcell='beginChooseAddress'></titlecell>
+
+<titlecell sideSep='1' titleColor='black' title="区域内所有商户列表" sep='0'></titlecell>
+
+<scroll-view wx:if="{{ empty }}" scroll-y="{{ true }}" style='flex:1;background: #fff;' bindscrolltoupper='onRefresh' bindscrolltolower='onLoadMore'>
+  <text style='margin-top:40rpx;font-size: 28rpx;color:gray;display:block;text-align:center;' >该区域无意向用户</text>
+</scroll-view>
+<scroll-view wx:else scroll-y="{{ true }}" style='flex:1;background: #fff;' bindscrolltoupper='onRefresh' bindscrolltolower='onLoadMore'>
+  <!-- <titlecell wx:for="{{ list }}" wx:key="{{ item.id }}" titleColor='black' valueMarginLeft='60rpx' title="{{ item.storeName }}" sep='0' bottomBorderSep='1' value="{{ item.contact }}" catchtap="onClickCell" data-item="{{item}}"></titlecell> -->
+
+  <view class='cell' wx:for="{{ list }}" wx:key="{{ item.id }}" bindtap='onClickCell' data-item="{{item}}">
+    <view class='contact'>
+      <text class='contactName'>{{ item.contact }}</text>
+      <text class='contactType' style='background: {{item.merchantTypeColor}}'>{{item.merchantTypeDesc}}</text>
+    </view>
+    <view class='storeName'>{{ item.storeName }}</view>
+  </view>
+  
+
+</scroll-view>
+
+<view bindtap='onAdd' wx-if="{{showBtn}}" class='yellowGradientButton shadowTop' style='min-height: 100rpx;'>
+  <text>新建意向商户</text>
+</view>
+
+<address-picker bindchoose='onChooseAddress' bindcancel='onCancelChooseAddress' show="{{ addressPickShow }}"></address-picker>

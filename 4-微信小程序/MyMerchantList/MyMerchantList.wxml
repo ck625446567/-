@@ -1,0 +1,9 @@
+<!--pages/WaitTaskModule/MyMerchantList/MyMerchantList.wxml-->
+
+<view class='body'>
+  <IntendedTaskPage style='height: 100%;width: 100%;' type='all'></IntendedTaskPage>
+</view>
+
+<view bindtap='onAdd' class='yellowGradientButton shadowTop' style='min-height: 100rpx;'>
+  <text>新建意向商户</text>
+</view>

@@ -1,0 +1,46 @@
+
+// 获取展示的文本
+function getShowName(driveMode, value, items, placeholder, keyName, valueName) {
+  console.log(items)
+  console.log('value->' + value)
+  // object
+  if (driveMode === '1') {
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i]
+      if (item[keyName] === value) {
+        return item[valueName]
+      }
+    }
+    return (value || placeholder)
+  } else {
+    return (value || placeholder)
+  }
+}
+
+// 获取选中文本的索引
+function getPickedIndex(driveMode, value, items, keyName) {
+  // object
+  if (driveMode === '1') {
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i]
+      if (item[keyName] === value) {
+        return i;
+      }
+    }
+    return -1
+  } else if (driveMode === '2') {
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i]
+      if (item === value) {
+        return i;
+      }
+    }
+    return -1
+  }
+  return -1
+}
+
+module.exports = {
+  getShowName: getShowName,
+  getPickedIndex: getPickedIndex
+}
